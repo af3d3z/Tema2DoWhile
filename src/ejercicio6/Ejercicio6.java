@@ -14,6 +14,7 @@ public class Ejercicio6 {
         Scanner sc = new Scanner(System.in);
 
         do{
+                // pedimos al jugador1 que introduzca una opción y si es inválida vuelve a preguntar
                 System.out.println("JUGADOR 1: ");
                 do{
                     System.out.println("Introduce piedra, papel o tijeras:");
@@ -25,12 +26,14 @@ public class Ejercicio6 {
                     System.out.println();
                 }
 
+                // pedimos al jugador2 que introduzca una opción y si es inválida vuelve a preguntar
                 System.out.println("JUGADOR 2: ");
                 do {
                     System.out.println("Introduce piedra, papel o tijeras:");
                     entradaUsu1 = sc.nextLine().toUpperCase();
                 }while(!entradaUsu1.equals(TIJERA) && !entradaUsu1.equals(PAPEL) && !entradaUsu1.equals(PIEDRA));
 
+                // comprobamos quién es el ganador de la ronda
                 if(entradaUsu0.equals(PIEDRA) && entradaUsu1.equals(PIEDRA)
                         || entradaUsu0.equals(PAPEL) && entradaUsu1.equals(PAPEL)
                         || entradaUsu0.equals(TIJERA) && entradaUsu1.equals(TIJERA))
@@ -49,7 +52,7 @@ public class Ejercicio6 {
                 }else {
                     System.out.println("ENTRADA INCORRECTA. SE SUSPENDE EL JUEGO");
                 }
-
+            // preguntamos si el usuario desea seguir jugando
             System.out.println("¿Deseas seguir jugando? (Sí/No)");
             continuar = sc.nextLine().toUpperCase().charAt(0);
         }while(continuar == 'S');
